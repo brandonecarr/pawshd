@@ -7,7 +7,7 @@ import { SITE_CONFIG } from "@/lib/constants";
 
 export default function CTASection() {
   return (
-    <section className="bg-gradient-to-r from-purple-700 to-purple-600 py-20">
+    <section className="bg-gradient-to-r from-purple-700 to-purple-500 py-20">
       <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -29,7 +29,7 @@ export default function CTASection() {
               href={`tel:${SITE_CONFIG.phone}`}
               variant="secondary"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-purple-700"
+              className="border-white text-white hover:bg-white hover:text-purple-900"
             >
               <Phone className="h-5 w-5" />
               Call {SITE_CONFIG.phone}

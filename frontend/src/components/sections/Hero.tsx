@@ -67,7 +67,7 @@ export default function Hero() {
           <Button href={SITE_CONFIG.quoteUrl} size="lg" variant="white">
             Get a Free Quote
           </Button>
-          <Button href="/services" size="lg" variant="secondary" className="border-white text-white hover:bg-white hover:text-purple-700">
+          <Button href="/services" size="lg" variant="secondary" className="border-white text-white hover:bg-white hover:text-purple-500">
             Our Services
           </Button>
         </motion.div>

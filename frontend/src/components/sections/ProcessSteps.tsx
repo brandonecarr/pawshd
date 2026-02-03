@@ -41,7 +41,7 @@ export default function ProcessSteps() {
                 className="relative rounded-2xl bg-white p-8 text-center shadow-sm"
               >
                 <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-purple-100">
-                  <Icon className="h-8 w-8 text-purple-600" />
+                  <Icon className="h-8 w-8 text-purple-500" />
                 </div>
                 <span className="absolute top-4 right-4 font-heading text-5xl font-bold text-sand-100">
                   {step.number}

@@ -44,7 +44,7 @@ export default function Header() {
           <span
             className={cn(
               "font-heading text-2xl font-bold transition-colors",
-              isScrolled ? "text-purple-700" : "text-white"
+              isScrolled ? "text-purple-500" : "text-white"
             )}
           >
             P.A.W.S. HD

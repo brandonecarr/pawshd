@@ -77,7 +77,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
-                  className="rounded-full bg-sand-800 p-2 text-sand-300 transition-colors hover:bg-purple-600 hover:text-white"
+                  className="rounded-full bg-sand-800 p-2 text-sand-300 transition-colors hover:bg-purple-500 hover:text-white"
                 >
                   <Facebook className="h-5 w-5" />
                 </a>
@@ -86,7 +86,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  className="rounded-full bg-sand-800 p-2 text-sand-300 transition-colors hover:bg-purple-600 hover:text-white"
+                  className="rounded-full bg-sand-800 p-2 text-sand-300 transition-colors hover:bg-purple-500 hover:text-white"
                 >
                   <Instagram className="h-5 w-5" />
                 </a>

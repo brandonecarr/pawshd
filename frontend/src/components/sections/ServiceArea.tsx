@@ -49,7 +49,7 @@ export default function ServiceArea() {
           >
             <div className="text-center">
               <MapPin className="mx-auto h-16 w-16 text-purple-400" />
-              <p className="mt-4 font-heading text-2xl font-bold text-purple-700">
+              <p className="mt-4 font-heading text-2xl font-bold text-purple-500">
                 High Desert, CA
               </p>
               <p className="mt-2 text-purple-500">

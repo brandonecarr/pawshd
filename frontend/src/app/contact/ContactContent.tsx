@@ -77,7 +77,7 @@ export default function ContactContent() {
                   className="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm transition-shadow hover:shadow-md"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-purple-100">
-                    <Phone className="h-5 w-5 text-purple-600" />
+                    <Phone className="h-5 w-5 text-purple-500" />
                   </div>
                   <div>
                     <p className="text-sm text-sand-500">Phone</p>
@@ -92,7 +92,7 @@ export default function ContactContent() {
                   className="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm transition-shadow hover:shadow-md"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-purple-100">
-                    <Mail className="h-5 w-5 text-purple-600" />
+                    <Mail className="h-5 w-5 text-purple-500" />
                   </div>
                   <div>
                     <p className="text-sm text-sand-500">Email</p>
@@ -121,7 +121,7 @@ export default function ContactContent() {
 
                 <div className="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-purple-100">
-                    <MapPin className="h-5 w-5 text-purple-600" />
+                    <MapPin className="h-5 w-5 text-purple-500" />
                   </div>
                   <div>
                     <p className="text-sm text-sand-500">Service Area</p>

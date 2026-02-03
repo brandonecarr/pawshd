@@ -42,8 +42,8 @@ export default function ServicesOverview() {
                 transition={{ delay: i * 0.1 }}
                 className="group rounded-2xl bg-white p-8 shadow-sm transition-shadow hover:shadow-md"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-purple-100 transition-colors group-hover:bg-purple-600">
-                  <Icon className="h-7 w-7 text-purple-600 transition-colors group-hover:text-white" />
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-purple-100 transition-colors group-hover:bg-purple-500">
+                  <Icon className="h-7 w-7 text-purple-500 transition-colors group-hover:text-white" />
                 </div>
                 <h3 className="mt-6 font-heading text-xl font-semibold text-bark-900">
                   {service.title}

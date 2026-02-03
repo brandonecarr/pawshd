@@ -116,7 +116,7 @@ export default function AboutContent() {
                   className="rounded-2xl bg-white p-8 text-center shadow-sm"
                 >
                   <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-purple-100">
-                    <Icon className="h-7 w-7 text-purple-600" />
+                    <Icon className="h-7 w-7 text-purple-500" />
                   </div>
                   <h3 className="mt-5 font-heading text-lg font-semibold text-bark-900">
                     {value.title}

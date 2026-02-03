@@ -57,7 +57,7 @@ export default function BlogContent() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {loading && (
             <div className="flex justify-center py-20">
-              <div className="h-8 w-8 animate-spin rounded-full border-4 border-purple-200 border-t-purple-600" />
+              <div className="h-8 w-8 animate-spin rounded-full border-4 border-purple-200 border-t-purple-500" />
             </div>
           )}
 

@@ -39,7 +39,7 @@ export default function BlogCard({ post }: { post: WPPost }) {
       )}
       <div className="p-6">
         <time className="text-sm text-sand-500">{date}</time>
-        <h3 className="mt-2 font-heading text-lg font-semibold text-bark-900 transition-colors group-hover:text-purple-600">
+        <h3 className="mt-2 font-heading text-lg font-semibold text-bark-900 transition-colors group-hover:text-purple-500">
           {post.title.rendered}
         </h3>
         {excerpt && <p className="mt-2 text-sm text-sand-600">{excerpt}...</p>}

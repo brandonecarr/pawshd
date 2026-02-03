@@ -48,7 +48,7 @@ function AnimatedCounter({
 
 export default function StatsCounter() {
   return (
-    <section className="bg-purple-600 py-16">
+    <section className="bg-purple-500 py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {STATS.map((stat, i) => (

@@ -90,7 +90,7 @@ export default function ServicesContent() {
                 >
                   <div className="flex-1">
                     <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-purple-100">
-                      <Icon className="h-8 w-8 text-purple-600" />
+                      <Icon className="h-8 w-8 text-purple-500" />
                     </div>
                     <h2 className="mt-6 font-heading text-3xl font-bold text-bark-900">
                       {service.title}
