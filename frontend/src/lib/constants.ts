@@ -88,7 +88,7 @@ export const SERVICES = [
       "Complementary clean-up of wind-blown debris in your yard. Free for qualifying regular service clients.",
     icon: "wind" as const,
     image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1000&auto=format&fit=crop",
     features: [
       "Free for qualifying clients",
       "Tumbleweeds and trash removal",
@@ -116,7 +116,7 @@ export const SERVICES = [
 export const IMAGES = {
   hero: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=1600&auto=format&fit=crop",
   about:
-    "https://images.unsplash.com/photo-1601758174493-45d0a4fa4a08?q=80&w=1000&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=1000&auto=format&fit=crop",
   trust:
     "https://images.unsplash.com/photo-1544568100-847a948585b9?q=80&w=1000&auto=format&fit=crop",
 } as const;
@@ -152,7 +152,7 @@ export const TESTIMONIALS = [
     text: "The wind debris cleanup alone is worth it. They go above and beyond. Consistently great service.",
     rating: 5,
     image:
-      "https://images.unsplash.com/photo-1477884213360-7e9d7dcc8f9b?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1534361960057-19889db9621e?q=80&w=600&auto=format&fit=crop",
   },
   {
     name: "Amanda T.",
