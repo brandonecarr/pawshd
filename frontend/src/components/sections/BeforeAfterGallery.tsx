@@ -1,24 +1,7 @@
 "use client";
 
 import Image from "next/image";
-
-const galleryItems = [
-  {
-    before: "/gallery/andrew-before.jpg",
-    after: "/gallery/andrew-after.jpg",
-    label: "Regular Service",
-  },
-  {
-    before: "/gallery/onetime-before.jpg",
-    after: "/gallery/onetime-after.jpg",
-    label: "One-Time Cleanup",
-  },
-];
-
-const extraImages = [
-  { src: "/gallery/gallery-1.jpg", alt: "Clean yard result" },
-  { src: "/gallery/gallery-2.jpg", alt: "Happy customer yard" },
-];
+import { BEFORE_AFTER_GALLERY } from "@/lib/constants";
 
 export default function BeforeAfterGallery() {
   return (
@@ -37,13 +20,13 @@ export default function BeforeAfterGallery() {
         </div>
 
         <div className="space-y-8">
-          {galleryItems.map((item) => (
-            <div key={item.label} className="space-y-3">
+          {BEFORE_AFTER_GALLERY.map((item, i) => (
+            <div key={i} className="space-y-3">
               <p className="text-xs font-bold uppercase tracking-wider text-sand-400 text-center">
                 {item.label}
               </p>
               <div className="grid grid-cols-2 gap-4">
-                <div className="relative rounded-[2rem] overflow-hidden aspect-[4/3] shadow-lg group">
+                <div className="relative rounded-[2rem] overflow-hidden aspect-square shadow-lg">
                   <Image
                     src={item.before}
                     alt={`${item.label} - Before`}
@@ -54,7 +37,7 @@ export default function BeforeAfterGallery() {
                     Before
                   </div>
                 </div>
-                <div className="relative rounded-[2rem] overflow-hidden aspect-[4/3] shadow-lg group">
+                <div className="relative rounded-[2rem] overflow-hidden aspect-square shadow-lg">
                   <Image
                     src={item.after}
                     alt={`${item.label} - After`}
@@ -66,22 +49,6 @@ export default function BeforeAfterGallery() {
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-8 grid grid-cols-2 gap-4">
-          {extraImages.map((img) => (
-            <div
-              key={img.src}
-              className="relative rounded-[2rem] overflow-hidden aspect-[4/3] shadow-lg group"
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
             </div>
           ))}
         </div>

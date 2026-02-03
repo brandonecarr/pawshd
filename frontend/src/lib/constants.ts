@@ -65,15 +65,52 @@ export const PROCESS_STEPS = [
   },
 ] as const;
 
+export const SERVICE_FEATURES = [
+  {
+    title: "Reliability",
+    description:
+      "Prompt and professional service that will leave you happy with the results. Rain or shine, we're there.",
+    icon: "shield-check" as const,
+  },
+  {
+    title: "Attention to Detail",
+    description:
+      "No stone unturned, no poo left behind to ensure your yard is as tidy and as clean as possible.",
+    icon: "search" as const,
+  },
+  {
+    title: "Flexible Scheduling",
+    description:
+      "Work out what day(s) work best for you and we accommodate accordingly!",
+    icon: "calendar" as const,
+  },
+  {
+    title: "Easy To Use Client Portal",
+    description:
+      "Our software makes your life easy when it comes to managing your service, adding/removing dogs, pausing your service and more!",
+    icon: "monitor" as const,
+  },
+  {
+    title: "Trusted in the Community",
+    description:
+      "With over 110+ combined 5-Star reviews, we are proud to share some success in the community.",
+    icon: "star" as const,
+  },
+  {
+    title: "No Contracts",
+    description: "No-hassle cancellation at any time.",
+    icon: "file-x" as const,
+  },
+] as const;
+
 export const SERVICES = [
   {
     id: "waste-removal",
     title: "Pet Waste Removal",
     description:
-      "Our core service. We thoroughly clean your yard of all pet waste on a regular schedule that works for you.",
+      "Specializing in reliable pet waste removal for a cleaner, healthier yard for you, your family, and your pets.",
     icon: "trash-2" as const,
-    image:
-      "https://images.unsplash.com/photo-1587300003388-59208cc962cb?q=80&w=1000&auto=format&fit=crop",
+    image: "/services/danny.jpg",
     features: [
       "Weekly, bi-weekly, or 3x/week options",
       "Complete yard coverage",
@@ -85,10 +122,9 @@ export const SERVICES = [
     id: "wind-debris",
     title: "Wind-Debris Clean Up",
     description:
-      "Complementary clean-up of wind-blown debris in your yard. Free for qualifying regular service clients.",
+      "Anyone in the HD understands how NASTY those winds can be and the unwanted trash/weeds that come along with it. If your yard is in need of this type of cleaning, look no further! This service is included FREE for qualifying yards.",
     icon: "wind" as const,
-    image:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1000&auto=format&fit=crop",
+    image: "/services/wind-debris.png",
     features: [
       "Free for qualifying clients",
       "Tumbleweeds and trash removal",
@@ -100,10 +136,9 @@ export const SERVICES = [
     id: "deodorizing",
     title: "Deodorizing",
     description:
-      "Enzyme-based deodorizing treatment for smaller areas like patios, kennels, and artificial turf.",
+      "Tired of that urine and feces smell that ruins your outdoor space? Good thing we offer that as well! We use the best deodorizer and sanitizer on the market to ensure that the value is there when it comes to our services! (Available for 1/8th acres or smaller areas that have high usage)",
     icon: "spray-can" as const,
-    image:
-      "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?q=80&w=1000&auto=format&fit=crop",
+    image: "/services/deodorizing.png",
     features: [
       "Enzyme-based formula",
       "Safe for pets and kids",
@@ -113,12 +148,24 @@ export const SERVICES = [
   },
 ] as const;
 
+export const BEFORE_AFTER_GALLERY = [
+  { before: "/gallery/andrew-before.jpg", after: "/gallery/andrew-after.jpg", label: "Regular Service" },
+  { before: "/gallery/onetime-before.jpg", after: "/gallery/onetime-after.jpg", label: "One-Time Cleanup" },
+  { before: "/gallery/anne-before.jpg", after: "/gallery/anne-after.jpg", label: "Regular Service" },
+  { before: "/gallery/cristal-rocks-before.jpg", after: "/gallery/cristal-rocks-after.jpg", label: "Rocky Yard" },
+  { before: "/gallery/becca-before.jpg", after: "/gallery/becca-after.jpg", label: "Regular Service" },
+  { before: "/gallery/cristal-before.jpg", after: "/gallery/cristal-after.jpg", label: "Regular Service" },
+  { before: "/gallery/cookie-before.jpg", after: "/gallery/cookie-after.jpg", label: "Regular Service" },
+  { before: "/gallery/becca-2-before.jpg", after: "/gallery/becca-2-after.jpg", label: "Regular Service" },
+] as const;
+
 export const IMAGES = {
   hero: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=1600&auto=format&fit=crop",
   about:
     "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=1000&auto=format&fit=crop",
   trust:
     "https://images.unsplash.com/photo-1544568100-847a948585b9?q=80&w=1000&auto=format&fit=crop",
+  servicesBanner: "/services/banner.png",
 } as const;
 
 export const TESTIMONIALS = [
