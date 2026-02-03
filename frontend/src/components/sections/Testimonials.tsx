@@ -16,11 +16,11 @@ export default function Testimonials() {
         </h2>
       </div>
 
-      <div className="flex gap-4 overflow-x-auto scrollbar-hide px-6 pb-8 max-w-[1400px] mx-auto snap-x snap-mandatory">
+      <div className="flex gap-4 overflow-x-auto scrollbar-hide px-6 pb-8 mx-auto snap-x snap-mandatory lg:grid lg:grid-cols-5 lg:overflow-visible lg:max-w-6xl">
         {TESTIMONIALS.map((t, i) => (
           <div
             key={i}
-            className="snap-center shrink-0 w-[280px] h-[480px] rounded-[2rem] overflow-hidden relative group"
+            className="snap-center shrink-0 w-[280px] lg:w-auto h-[480px] rounded-[2rem] overflow-hidden relative group"
           >
             <Image
               src={t.image}
