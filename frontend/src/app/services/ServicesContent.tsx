@@ -40,7 +40,7 @@ export default function ServicesContent() {
     <>
       <section className="bg-purple-900 pt-28 pb-14">
         <div className="mx-auto max-w-6xl px-6">
-          <p className="text-xs font-bold uppercase tracking-wider text-accent">
+          <p className="text-xs font-bold uppercase tracking-wider text-purple-300">
             What we do
           </p>
           <h1 className="mt-3 text-4xl md:text-5xl font-extrabold text-white tracking-tight">
@@ -72,7 +72,7 @@ export default function ServicesContent() {
                   />
                 </div>
                 <div className={isReversed ? "md:order-1" : ""}>
-                  <div className="w-12 h-12 bg-purple-900 rounded-2xl flex items-center justify-center text-accent mb-4">
+                  <div className="w-12 h-12 bg-purple-900 rounded-2xl flex items-center justify-center text-purple-300 mb-4">
                     <Icon className="w-6 h-6" />
                   </div>
                   <h2 className="text-3xl font-extrabold text-purple-900 tracking-tight">

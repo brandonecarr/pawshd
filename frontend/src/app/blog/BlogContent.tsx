@@ -32,7 +32,7 @@ export default function BlogContent() {
     <>
       <section className="bg-purple-900 pt-28 pb-14">
         <div className="mx-auto max-w-6xl px-6">
-          <p className="text-xs font-bold uppercase tracking-wider text-accent">
+          <p className="text-xs font-bold uppercase tracking-wider text-purple-300">
             News & tips
           </p>
           <h1 className="mt-3 text-4xl md:text-5xl font-extrabold text-white tracking-tight">

@@ -78,19 +78,19 @@ export default function StatsCounter() {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4">
               <div className="space-y-2">
-                <div className="w-12 h-12 bg-purple-900 rounded-2xl flex items-center justify-center text-accent">
+                <div className="w-12 h-12 bg-purple-900 rounded-2xl flex items-center justify-center text-purple-300">
                   <UserCheck className="w-6 h-6" />
                 </div>
                 <h3 className="font-bold text-purple-900">200+ Clients</h3>
               </div>
               <div className="space-y-2">
-                <div className="w-12 h-12 bg-purple-900 rounded-2xl flex items-center justify-center text-accent">
+                <div className="w-12 h-12 bg-purple-900 rounded-2xl flex items-center justify-center text-purple-300">
                   <ShieldCheck className="w-6 h-6" />
                 </div>
                 <h3 className="font-bold text-purple-900">Fully Insured</h3>
               </div>
               <div className="space-y-2">
-                <div className="w-12 h-12 bg-purple-900 rounded-2xl flex items-center justify-center text-accent">
+                <div className="w-12 h-12 bg-purple-900 rounded-2xl flex items-center justify-center text-purple-300">
                   <Star className="w-6 h-6" />
                 </div>
                 <h3 className="font-bold text-purple-900">5-Star Rated</h3>

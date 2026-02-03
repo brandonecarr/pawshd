@@ -23,7 +23,7 @@
   --color-purple-800: #231456;
   --color-purple-900: #1F1346;
 
-  --color-accent: #00E36B;
+  --color-accent: #673de6;
   --color-bg: #F8F9FA;
   --color-bark-900: #1d1e20;
 
@@ -73,6 +73,6 @@ details[open] summary ~ * {
 
 /* Selection color */
 ::selection {
-  background-color: var(--color-accent);
-  color: var(--color-purple-900);
+  background-color: var(--color-purple-400);
+  color: white;
 }

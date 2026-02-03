@@ -37,7 +37,7 @@ export default function AboutContent() {
     <>
       <section className="bg-purple-900 pt-28 pb-14">
         <div className="mx-auto max-w-6xl px-6">
-          <p className="text-xs font-bold uppercase tracking-wider text-accent">
+          <p className="text-xs font-bold uppercase tracking-wider text-purple-300">
             Our story
           </p>
           <h1 className="mt-3 text-4xl md:text-5xl font-extrabold text-white tracking-tight">
@@ -107,7 +107,7 @@ export default function AboutContent() {
                   key={value.title}
                   className="rounded-3xl bg-white p-6 shadow-sm border border-sand-100 hover:-translate-y-2 hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="w-12 h-12 bg-purple-900 rounded-2xl flex items-center justify-center text-accent">
+                  <div className="w-12 h-12 bg-purple-900 rounded-2xl flex items-center justify-center text-purple-300">
                     <Icon className="h-5 w-5" />
                   </div>
                   <h3 className="mt-4 font-bold text-purple-900">
