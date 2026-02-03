@@ -44,7 +44,7 @@ export default function Hero() {
                 </Button>
                 <Button
                   href={`tel:${SITE_CONFIG.phone}`}
-                  variant="accentOutline"
+                  variant="white"
                   size="lg"
                 >
                   Call {SITE_CONFIG.phone}
