@@ -106,7 +106,7 @@ export default function ContactContent() {
 
               <Link
                 href={SITE_CONFIG.quoteUrl}
-                className="inline-flex items-center gap-2 bg-accent text-purple-900 px-6 py-3 rounded-full font-bold text-sm hover:bg-white hover:shadow-lg transition-all shadow-[0_0_15px_rgba(0,227,107,0.3)]"
+                className="inline-flex items-center gap-2 bg-accent/80 backdrop-blur-md text-purple-900 border border-white/20 px-6 py-3 rounded-full font-bold text-sm hover:bg-accent transition-all shadow-[0_0_15px_rgba(0,227,107,0.3)]"
               >
                 Quote via SweepAndGo
               </Link>
@@ -233,7 +233,7 @@ export default function ContactContent() {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full rounded-full bg-accent text-purple-900 px-6 py-4 font-bold text-lg transition-all hover:bg-white hover:shadow-lg shadow-[0_0_20px_rgba(0,227,107,0.3)] disabled:opacity-50"
+                    className="w-full rounded-full bg-accent/80 backdrop-blur-md text-purple-900 border border-white/20 px-6 py-4 font-bold text-lg transition-all hover:bg-accent hover:shadow-lg shadow-[0_0_20px_rgba(0,227,107,0.3)] disabled:opacity-50"
                   >
                     {submitting ? "Sending..." : "Send Message"}
                   </button>

@@ -37,7 +37,7 @@ export default function ProcessSteps() {
         <div className="text-center mt-12">
           <Link
             href={SITE_CONFIG.quoteUrl}
-            className="inline-flex items-center gap-3 bg-accent text-purple-900 px-10 py-4 rounded-full font-bold text-lg hover:bg-white transition-all hover:-translate-y-1 shadow-[0_0_25px_rgba(0,227,107,0.3)]"
+            className="inline-flex items-center gap-3 bg-accent/80 backdrop-blur-md text-purple-900 border border-white/20 px-10 py-4 rounded-full font-bold text-lg hover:bg-accent transition-all hover:-translate-y-1 shadow-[0_0_25px_rgba(0,227,107,0.3)]"
           >
             Start Planning
             <ChevronRight className="w-5 h-5" />

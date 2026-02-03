@@ -31,13 +31,13 @@ export default function FAQContent() {
             <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-accent text-purple-900 px-6 py-3 rounded-full font-bold text-sm hover:bg-white transition-all shadow-[0_0_15px_rgba(0,227,107,0.3)]"
+                className="inline-flex items-center gap-2 bg-accent/80 backdrop-blur-md text-purple-900 border border-white/20 px-6 py-3 rounded-full font-bold text-sm hover:bg-accent transition-all shadow-[0_0_15px_rgba(0,227,107,0.3)]"
               >
                 Contact Us
               </Link>
               <a
                 href={`tel:${SITE_CONFIG.phone}`}
-                className="inline-flex items-center gap-2 border-2 border-purple-900 text-purple-900 px-6 py-3 rounded-full font-bold text-sm hover:bg-purple-900 hover:text-white transition-all"
+                className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-purple-900/50 text-purple-900 px-6 py-3 rounded-full font-bold text-sm hover:bg-purple-900/10 transition-all"
               >
                 Call {SITE_CONFIG.phone}
               </a>

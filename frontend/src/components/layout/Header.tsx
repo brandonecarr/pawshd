@@ -61,7 +61,7 @@ export default function Header() {
 
         <Link
           href={SITE_CONFIG.quoteUrl}
-          className="hidden sm:flex bg-accent text-purple-900 px-5 py-2.5 rounded-full font-bold text-sm hover:bg-white transition-all items-center gap-2 shadow-[0_0_15px_rgba(0,227,107,0.3)]"
+          className="hidden sm:flex bg-accent/80 backdrop-blur-md text-purple-900 border border-white/20 px-5 py-2.5 rounded-full font-bold text-sm hover:bg-accent transition-all items-center gap-2 shadow-[0_0_15px_rgba(0,227,107,0.3)]"
         >
           Book Now
         </Link>
@@ -100,7 +100,7 @@ export default function Header() {
             <Link
               href={SITE_CONFIG.quoteUrl}
               onClick={() => setIsMobileOpen(false)}
-              className="block rounded-full bg-accent text-purple-900 px-6 py-3 text-center text-sm font-bold"
+              className="block rounded-full bg-accent/80 backdrop-blur-md text-purple-900 border border-white/20 px-6 py-3 text-center text-sm font-bold"
             >
               Book Now
             </Link>

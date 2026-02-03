@@ -19,14 +19,14 @@ export default function CTASection() {
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href={SITE_CONFIG.quoteUrl}
-            className="inline-flex items-center gap-3 bg-accent text-purple-900 px-10 py-4 rounded-full font-bold text-lg hover:bg-white transition-all hover:-translate-y-1 shadow-[0_0_25px_rgba(0,227,107,0.3)]"
+            className="inline-flex items-center gap-3 bg-accent/80 backdrop-blur-md text-purple-900 border border-white/20 px-10 py-4 rounded-full font-bold text-lg hover:bg-accent transition-all hover:-translate-y-1 shadow-[0_0_25px_rgba(0,227,107,0.3)]"
           >
             Get Your Free Quote
             <ChevronRight className="w-5 h-5" />
           </Link>
           <a
             href={`tel:${SITE_CONFIG.phone}`}
-            className="inline-flex items-center gap-2 border-2 border-accent text-accent px-8 py-4 rounded-full font-bold text-lg hover:bg-accent hover:text-purple-900 transition-all"
+            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-accent/50 text-accent px-8 py-4 rounded-full font-bold text-lg hover:bg-accent/20 transition-all"
           >
             Call {SITE_CONFIG.phone}
           </a>
