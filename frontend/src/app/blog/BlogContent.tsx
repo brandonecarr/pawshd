@@ -31,38 +31,42 @@ export default function BlogContent() {
   return (
     <>
       <section className="bg-purple-900 pt-28 pb-14">
-        <div className="mx-auto max-w-6xl px-5">
-          <p className="text-sm font-medium uppercase tracking-widest text-purple-300">
+        <div className="mx-auto max-w-6xl px-6">
+          <p className="text-xs font-bold uppercase tracking-wider text-accent">
             News & tips
           </p>
-          <h1 className="mt-3 font-heading text-4xl font-bold text-white">
+          <h1 className="mt-3 text-4xl md:text-5xl font-extrabold text-white tracking-tight">
             Blog
           </h1>
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="mx-auto max-w-6xl px-5">
+      <section className="py-16 md:py-24 bg-bg">
+        <div className="mx-auto max-w-6xl px-6">
           {loading && (
             <div className="flex justify-center py-16">
-              <div className="h-6 w-6 animate-spin rounded-full border-2 border-sand-200 border-t-purple-500" />
+              <div className="h-8 w-8 animate-spin rounded-full border-3 border-sand-200 border-t-accent" />
             </div>
           )}
 
           {error && (
-            <p className="text-center text-sand-500">
-              Blog posts will appear here once WordPress is connected.
-            </p>
+            <div className="text-center rounded-3xl bg-white border border-sand-100 p-12">
+              <p className="text-sand-500">
+                Blog posts will appear here once WordPress is connected.
+              </p>
+            </div>
           )}
 
           {!loading && !error && posts.length === 0 && (
-            <p className="text-center text-sand-500">
-              No blog posts yet. Check back soon.
-            </p>
+            <div className="text-center rounded-3xl bg-white border border-sand-100 p-12">
+              <p className="text-sand-500">
+                No blog posts yet. Check back soon.
+              </p>
+            </div>
           )}
 
           {!loading && posts.length > 0 && (
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {posts.map((post) => (
                 <BlogCard key={post.id} post={post} />
               ))}

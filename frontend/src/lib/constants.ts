@@ -72,6 +72,14 @@ export const SERVICES = [
     description:
       "Our core service. We thoroughly clean your yard of all pet waste on a regular schedule that works for you.",
     icon: "trash-2" as const,
+    image:
+      "https://images.unsplash.com/photo-1587300003388-59208cc962cb?q=80&w=1000&auto=format&fit=crop",
+    features: [
+      "Weekly, bi-weekly, or 3x/week options",
+      "Complete yard coverage",
+      "Waste bagged and removed",
+      "Gate lock code access available",
+    ],
   },
   {
     id: "wind-debris",
@@ -79,6 +87,14 @@ export const SERVICES = [
     description:
       "Complementary clean-up of wind-blown debris in your yard. Free for qualifying regular service clients.",
     icon: "wind" as const,
+    image:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=1000&auto=format&fit=crop",
+    features: [
+      "Free for qualifying clients",
+      "Tumbleweeds and trash removal",
+      "Keeps your yard tidy",
+      "Included with regular service",
+    ],
   },
   {
     id: "deodorizing",
@@ -86,6 +102,65 @@ export const SERVICES = [
     description:
       "Enzyme-based deodorizing treatment for smaller areas like patios, kennels, and artificial turf.",
     icon: "spray-can" as const,
+    image:
+      "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?q=80&w=1000&auto=format&fit=crop",
+    features: [
+      "Enzyme-based formula",
+      "Safe for pets and kids",
+      "Patios, kennels, turf",
+      "Eliminates odors at the source",
+    ],
+  },
+] as const;
+
+export const IMAGES = {
+  hero: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=1600&auto=format&fit=crop",
+  about:
+    "https://images.unsplash.com/photo-1601758174493-45d0a4fa4a08?q=80&w=1000&auto=format&fit=crop",
+  trust:
+    "https://images.unsplash.com/photo-1544568100-847a948585b9?q=80&w=1000&auto=format&fit=crop",
+} as const;
+
+export const TESTIMONIALS = [
+  {
+    name: "Sarah M.",
+    location: "Hesperia",
+    text: "Best service in the High Desert! My yard has never been cleaner. The team is reliable and thorough every single visit.",
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1587300003388-59208cc962cb?q=80&w=600&auto=format&fit=crop",
+  },
+  {
+    name: "Mike & Lisa R.",
+    location: "Apple Valley",
+    text: "With three big dogs, our yard was a nightmare. PAWS HD changed everything. Worth every penny!",
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1558929996-da64ba858215?q=80&w=600&auto=format&fit=crop",
+  },
+  {
+    name: "Jennifer K.",
+    location: "Victorville",
+    text: "Professional, punctual, and affordable. I recommend PAWS HD to every pet owner I know. Five stars!",
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1560807707-8cc77767d783?q=80&w=600&auto=format&fit=crop",
+  },
+  {
+    name: "David P.",
+    location: "Oak Hills",
+    text: "The wind debris cleanup alone is worth it. They go above and beyond. Consistently great service.",
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1477884213360-7e9d7dcc8f9b?q=80&w=600&auto=format&fit=crop",
+  },
+  {
+    name: "Amanda T.",
+    location: "Spring Valley Lake",
+    text: "I never have to worry about my yard anymore. The kids can play outside freely. Thank you PAWS HD!",
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?q=80&w=600&auto=format&fit=crop",
   },
 ] as const;
 

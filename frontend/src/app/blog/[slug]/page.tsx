@@ -27,7 +27,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (!post) return { title: "Post Not Found" };
     return {
       title: post.title.rendered,
-      description: post.excerpt.rendered.replace(/<[^>]*>/g, "").slice(0, 160),
+      description: post.excerpt.rendered
+        .replace(/<[^>]*>/g, "")
+        .slice(0, 160),
     };
   } catch {
     return { title: "Blog Post" };
@@ -58,28 +60,28 @@ export default async function BlogPostPage({ params }: Props) {
       <Header />
       <main>
         <section className="bg-purple-900 pt-28 pb-14">
-          <div className="mx-auto max-w-3xl px-5">
+          <div className="mx-auto max-w-3xl px-6">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-1 text-sm text-purple-300 hover:text-white"
+              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full hover:bg-white/20 transition-colors"
             >
               <ArrowLeft className="h-3.5 w-3.5" />
               Back to Blog
             </Link>
             <h1
-              className="mt-4 font-heading text-3xl font-bold text-white"
+              className="mt-6 text-3xl md:text-4xl font-extrabold text-white tracking-tight"
               dangerouslySetInnerHTML={{ __html: post.title.rendered }}
             />
-            <p className="mt-3 text-sm text-purple-300">
+            <p className="mt-3 text-sm text-purple-200/70">
               {author} &middot; {date}
             </p>
           </div>
         </section>
 
         <article className="py-16">
-          <div className="mx-auto max-w-3xl px-5">
+          <div className="mx-auto max-w-3xl px-6">
             {featuredImage && (
-              <div className="relative -mt-20 mb-10 aspect-video overflow-hidden rounded-lg">
+              <div className="relative -mt-20 mb-10 aspect-video overflow-hidden rounded-[2.5rem] shadow-2xl">
                 <Image
                   src={featuredImage.source_url}
                   alt={featuredImage.alt_text || post.title.rendered}
@@ -90,7 +92,7 @@ export default async function BlogPostPage({ params }: Props) {
               </div>
             )}
             <div
-              className="prose prose-lg max-w-none prose-headings:font-heading prose-headings:text-bark-900 prose-p:text-sand-600 prose-a:text-purple-500 prose-a:no-underline hover:prose-a:underline"
+              className="prose prose-lg max-w-none prose-headings:font-heading prose-headings:text-purple-900 prose-p:text-sand-600 prose-a:text-accent prose-a:no-underline hover:prose-a:underline"
               dangerouslySetInnerHTML={{ __html: post.content.rendered }}
             />
           </div>

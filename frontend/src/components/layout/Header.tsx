@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { NAV_LINKS, SITE_CONFIG } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -24,25 +24,27 @@ export default function Header() {
   }, [isMobileOpen]);
 
   return (
-    <header
+    <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-40 transition-all duration-300",
         isScrolled
-          ? "bg-white shadow-sm"
-          : "bg-purple-900/90 backdrop-blur-sm"
+          ? "bg-bg/80 backdrop-blur-md border-b border-sand-200/50"
+          : "bg-transparent"
       )}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-        <Link href="/" className="font-heading text-xl font-bold tracking-tight">
-          <span className={isScrolled ? "text-purple-900" : "text-white"}>
-            P.A.W.S.
-          </span>{" "}
-          <span className={isScrolled ? "text-purple-500" : "text-purple-300"}>
-            HD
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 h-20">
+        <Link href="/" className="flex items-center gap-2">
+          <span
+            className={cn(
+              "font-heading text-lg font-bold tracking-tight transition-colors",
+              isScrolled ? "text-purple-900" : "text-white"
+            )}
+          >
+            P.A.W.S. HD
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex">
+        <div className="hidden items-center gap-8 md:flex">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.id}
@@ -50,74 +52,63 @@ export default function Header() {
               className={cn(
                 "text-sm font-medium transition-colors",
                 isScrolled
-                  ? "text-sand-600 hover:text-purple-500"
-                  : "text-purple-100 hover:text-white"
+                  ? "text-sand-600 hover:text-purple-900"
+                  : "text-white/80 hover:text-white"
               )}
             >
               {link.label}
             </Link>
           ))}
-        </nav>
-
-        <div className="hidden items-center gap-5 md:flex">
-          <a
-            href={`tel:${SITE_CONFIG.phone}`}
-            className={cn(
-              "flex items-center gap-1.5 text-sm font-medium",
-              isScrolled ? "text-sand-700" : "text-purple-200"
-            )}
-          >
-            <Phone className="h-3.5 w-3.5" />
-            {SITE_CONFIG.phone}
-          </a>
-          <Link
-            href={SITE_CONFIG.quoteUrl}
-            className="rounded-full bg-purple-500 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-purple-600"
-          >
-            Free Quote
-          </Link>
         </div>
+
+        <Link
+          href={SITE_CONFIG.quoteUrl}
+          className="hidden sm:flex bg-accent text-purple-900 px-5 py-2.5 rounded-full font-bold text-sm hover:bg-white transition-all items-center gap-2 shadow-[0_0_15px_rgba(0,227,107,0.3)]"
+        >
+          Book Now
+        </Link>
 
         <button
           onClick={() => setIsMobileOpen(!isMobileOpen)}
-          className={cn("p-2 md:hidden", isScrolled ? "text-sand-900" : "text-white")}
+          className={cn(
+            "p-2 md:hidden transition-colors",
+            isScrolled ? "text-purple-900" : "text-white"
+          )}
           aria-label="Toggle menu"
         >
-          {isMobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {isMobileOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
         </button>
       </div>
 
       {isMobileOpen && (
-        <div className="border-t border-sand-100 bg-white px-5 pb-6 pt-4 md:hidden">
+        <div className="bg-white border-t border-sand-100 px-6 pb-6 pt-4 md:hidden">
           <nav className="flex flex-col gap-1">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.id}
                 href={link.href}
                 onClick={() => setIsMobileOpen(false)}
-                className="rounded-lg px-3 py-2.5 text-sm font-medium text-sand-700 hover:bg-sand-50"
+                className="rounded-2xl px-4 py-3 text-sm font-medium text-sand-700 hover:bg-sand-50 transition-colors"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
-          <div className="mt-4 flex flex-col gap-3 border-t border-sand-100 pt-4">
-            <a
-              href={`tel:${SITE_CONFIG.phone}`}
-              className="flex items-center gap-2 px-3 text-sm text-sand-600"
-            >
-              <Phone className="h-3.5 w-3.5" />
-              {SITE_CONFIG.phone}
-            </a>
+          <div className="mt-4 border-t border-sand-100 pt-4">
             <Link
               href={SITE_CONFIG.quoteUrl}
-              className="rounded-full bg-purple-500 px-5 py-2.5 text-center text-sm font-semibold text-white"
+              onClick={() => setIsMobileOpen(false)}
+              className="block rounded-full bg-accent text-purple-900 px-6 py-3 text-center text-sm font-bold"
             >
-              Free Quote
+              Book Now
             </Link>
           </div>
         </div>
       )}
-    </header>
+    </nav>
   );
 }

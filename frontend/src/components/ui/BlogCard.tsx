@@ -15,7 +15,7 @@ function stripHtml(html: string) {
 
 export default function BlogCard({ post }: { post: WPPost }) {
   const image = getFeaturedImage(post);
-  const excerpt = stripHtml(post.excerpt.rendered).slice(0, 150);
+  const excerpt = stripHtml(post.excerpt.rendered).slice(0, 120);
   const date = new Date(post.date).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
@@ -25,27 +25,26 @@ export default function BlogCard({ post }: { post: WPPost }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group rounded-lg border border-sand-200 bg-white transition-colors hover:border-purple-200"
+      className="group relative h-[360px] rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 block"
     >
-      {image && (
-        <div className="relative aspect-video overflow-hidden rounded-t-lg">
-          <Image
-            src={image.src}
-            alt={image.alt}
-            fill
-            className="object-cover"
-          />
-        </div>
+      {image ? (
+        <Image
+          src={image.src}
+          alt={image.alt}
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+      ) : (
+        <div className="absolute inset-0 bg-purple-900" />
       )}
-      <div className="p-5">
-        <time className="text-xs text-sand-400">{date}</time>
-        <h3 className="mt-1.5 text-sm font-semibold text-bark-900 group-hover:text-purple-500">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 p-6">
+        <time className="text-xs text-white/60">{date}</time>
+        <h3 className="mt-2 text-lg font-bold text-white tracking-tight group-hover:text-accent transition-colors">
           {post.title.rendered}
         </h3>
         {excerpt && (
-          <p className="mt-2 text-xs leading-relaxed text-sand-500">
-            {excerpt}...
-          </p>
+          <p className="mt-2 text-sm text-white/70 line-clamp-2">{excerpt}...</p>
         )}
       </div>
     </Link>

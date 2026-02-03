@@ -1,42 +1,47 @@
-import { ClipboardList, Calendar, Sparkles } from "lucide-react";
-import { PROCESS_STEPS } from "@/lib/constants";
-
-const iconMap = {
-  "clipboard-list": ClipboardList,
-  calendar: Calendar,
-  sparkles: Sparkles,
-} as const;
+import { PROCESS_STEPS, SITE_CONFIG } from "@/lib/constants";
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
 export default function ProcessSteps() {
   return (
-    <section className="py-20">
-      <div className="mx-auto max-w-6xl px-5">
-        <div className="text-center">
-          <h2 className="font-heading text-3xl font-bold text-bark-900">
+    <section className="py-16 md:py-24 bg-purple-900 text-white">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <p className="text-xs font-bold uppercase tracking-wider text-accent">
+            Simple process
+          </p>
+          <h2 className="mt-3 text-4xl font-extrabold tracking-tight">
             How It Works
           </h2>
-          <p className="mt-2 text-sand-500">
+          <p className="mt-3 text-purple-200/70 text-lg">
             Three simple steps to a cleaner yard.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-10 md:grid-cols-3">
-          {PROCESS_STEPS.map((step) => {
-            const Icon = iconMap[step.icon];
-            return (
-              <div key={step.number} className="text-center">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-purple-50 text-purple-500">
-                  <Icon className="h-6 w-6" />
-                </div>
-                <h3 className="mt-5 font-heading text-lg font-semibold text-bark-900">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-sand-500">
-                  {step.description}
-                </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center relative">
+          <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-white/10" />
+
+          {PROCESS_STEPS.map((step) => (
+            <div key={step.number} className="relative z-10">
+              <div className="w-24 h-24 bg-purple-900 border-2 border-accent rounded-full flex items-center justify-center mx-auto mb-6 text-accent">
+                <span className="text-3xl font-extrabold">{step.number}</span>
               </div>
-            );
-          })}
+              <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+              <p className="text-purple-200/60 text-sm max-w-xs mx-auto">
+                {step.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Link
+            href={SITE_CONFIG.quoteUrl}
+            className="inline-flex items-center gap-3 bg-accent text-purple-900 px-10 py-4 rounded-full font-bold text-lg hover:bg-white transition-all hover:-translate-y-1 shadow-[0_0_25px_rgba(0,227,107,0.3)]"
+          >
+            Start Planning
+            <ChevronRight className="w-5 h-5" />
+          </Link>
         </div>
       </div>
     </section>

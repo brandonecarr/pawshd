@@ -23,30 +23,56 @@
   --color-purple-800: #231456;
   --color-purple-900: #1F1346;
 
-  --color-cream: #ffffff;
+  --color-accent: #00E36B;
+  --color-bg: #F8F9FA;
   --color-bark-900: #1d1e20;
-
-  --color-accent-green: #00b090;
 
   --font-body: var(--font-nunito-sans);
   --font-heading: var(--font-fredoka);
 }
 
 body {
-  background-color: var(--color-cream);
+  background-color: var(--color-bg);
   color: var(--color-bark-900);
   font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading), system-ui, sans-serif;
 }
 
+/* Details/Summary reset */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details[open] summary ~ * {
+  animation: sweep 0.3s ease-in-out;
+}
+@keyframes sweep {
+  0% { opacity: 0; transform: translateY(-8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Hide scrollbar for horizontal scroll containers */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Prose image rounding */
 .prose img {
-  border-radius: 0.5rem;
+  border-radius: 1.25rem;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-purple-900);
 }

@@ -6,22 +6,29 @@ import Link from "next/link";
 import type { ComponentPropsWithoutRef } from "react";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2",
+  "inline-flex items-center justify-center gap-2 rounded-full font-bold tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2",
   {
     variants: {
       variant: {
-        primary: "bg-purple-500 text-white hover:bg-purple-600 shadow-lg hover:shadow-xl",
+        primary:
+          "bg-purple-500 text-white hover:bg-purple-600 shadow-lg hover:shadow-xl hover:-translate-y-0.5",
+        accent:
+          "bg-accent text-purple-900 hover:bg-white shadow-[0_0_20px_rgba(0,227,107,0.4)] hover:-translate-y-0.5",
+        accentOutline:
+          "border-2 border-accent text-accent hover:bg-accent hover:text-purple-900",
         secondary:
           "border-2 border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white",
         outline:
           "border-2 border-sand-300 text-bark-900 hover:border-purple-500 hover:text-purple-500",
         ghost: "text-bark-900 hover:bg-sand-100",
-        white: "bg-white text-purple-500 hover:bg-sand-50 shadow-lg",
+        white:
+          "bg-white text-purple-900 hover:bg-sand-50 shadow-lg hover:shadow-xl hover:-translate-y-0.5",
       },
       size: {
-        sm: "px-4 py-2 text-sm",
+        sm: "px-5 py-2.5 text-sm",
         md: "px-6 py-3 text-base",
         lg: "px-8 py-4 text-lg",
+        xl: "px-10 py-5 text-lg",
       },
     },
     defaultVariants: {
@@ -52,7 +59,10 @@ export default function Button(props: ButtonProps) {
 
   if (href) {
     const isExternal = href.startsWith("http");
-    const { ...linkProps } = rest as Omit<ComponentPropsWithoutRef<typeof Link>, "className" | "href">;
+    const { ...linkProps } = rest as Omit<
+      ComponentPropsWithoutRef<typeof Link>,
+      "className" | "href"
+    >;
     return (
       <Link
         href={href}
@@ -65,7 +75,10 @@ export default function Button(props: ButtonProps) {
     );
   }
 
-  const { ...buttonProps } = rest as Omit<ComponentPropsWithoutRef<"button">, "className">;
+  const { ...buttonProps } = rest as Omit<
+    ComponentPropsWithoutRef<"button">,
+    "className"
+  >;
   return (
     <button className={classes} {...buttonProps}>
       {children}
