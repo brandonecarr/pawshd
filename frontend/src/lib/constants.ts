@@ -162,6 +162,38 @@ export const TESTIMONIALS = [
     image:
       "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?q=80&w=600&auto=format&fit=crop",
   },
+  {
+    name: "Robert G.",
+    location: "Adelanto",
+    text: "Switched from another service and the difference is night and day. PAWS HD is thorough, on time, and the yard smells great.",
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=600&auto=format&fit=crop",
+  },
+  {
+    name: "Maria L.",
+    location: "Victorville",
+    text: "As a busy mom with two dogs, this service is a lifesaver. One less thing to worry about. Highly recommend!",
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?q=80&w=600&auto=format&fit=crop",
+  },
+  {
+    name: "Chris & Amy W.",
+    location: "Hesperia",
+    text: "We've been customers for over a year. Consistent, reliable, and friendly. Our backyard is always guest-ready now.",
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1477884213360-7e9d7dcc8f9b?q=80&w=600&auto=format&fit=crop",
+  },
+  {
+    name: "Tina R.",
+    location: "Phelan",
+    text: "The deodorizing add-on is amazing. Our patio area has never smelled better. Great value for the price.",
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=600&auto=format&fit=crop",
+  },
 ] as const;
 
 export const FAQS = [
