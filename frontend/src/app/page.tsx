@@ -3,6 +3,7 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import StatsCounter from "@/components/sections/StatsCounter";
 import ServicesOverview from "@/components/sections/ServicesOverview";
+import BeforeAfterGallery from "@/components/sections/BeforeAfterGallery";
 import ProcessSteps from "@/components/sections/ProcessSteps";
 import Testimonials from "@/components/sections/Testimonials";
 import ServiceArea from "@/components/sections/ServiceArea";
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <StatsCounter />
         <ServicesOverview />
+        <BeforeAfterGallery />
         <ProcessSteps />
         <Testimonials />
         <ServiceArea />
