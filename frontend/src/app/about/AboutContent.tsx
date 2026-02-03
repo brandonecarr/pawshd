@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Heart, Eye, Shield, Tag } from "lucide-react";
 import CTASection from "@/components/sections/CTASection";
 
@@ -34,97 +33,61 @@ const values = [
 export default function AboutContent() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-purple-900 to-purple-700 pt-32 pb-20">
-        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="font-heading text-5xl font-bold text-white"
-          >
+      <section className="bg-purple-900 pt-28 pb-14">
+        <div className="mx-auto max-w-6xl px-5">
+          <p className="text-sm font-medium uppercase tracking-widest text-purple-300">
+            Our story
+          </p>
+          <h1 className="mt-3 font-heading text-4xl font-bold text-white">
             About P.A.W.S. HD
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="mt-4 text-lg text-purple-200"
-          >
-            Poop And Waste Solutions for the High Desert
-          </motion.p>
+          </h1>
         </div>
       </section>
 
-      {/* Story */}
-      <section className="bg-cream py-24">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <h2 className="font-heading text-3xl font-bold text-bark-900">
-              Our Story
-            </h2>
-            <div className="mt-8 space-y-4 text-lg text-sand-600">
-              <p>
-                P.A.W.S. HD — Poop And Waste Solutions, High Desert — was born
-                from a simple idea: pet owners in the High Desert deserve a
-                reliable, professional yard cleaning service so they can spend
-                more time enjoying their outdoor spaces with their furry family
-                members.
-              </p>
-              <p>
-                We understand the unique challenges of living in the High Desert
-                — from the wind-blown debris to the heat that can make yard
-                cleanup unpleasant. That&apos;s why we do the dirty work for
-                you, thoroughly and consistently.
-              </p>
-              <p>
-                With over 85 happy customers and more than 150 five-star reviews,
-                we&apos;re proud to be the trusted choice for pet waste removal
-                in Hesperia, Victorville, Apple Valley, and the surrounding
-                communities.
-              </p>
-            </div>
-          </motion.div>
+      <section className="py-20">
+        <div className="mx-auto max-w-2xl px-5">
+          <div className="space-y-5 leading-relaxed text-sand-600">
+            <p>
+              P.A.W.S. HD — Poop And Waste Solutions, High Desert — was born
+              from a simple idea: pet owners in the High Desert deserve a
+              reliable, professional yard cleaning service so they can spend
+              more time enjoying their outdoor spaces with their furry family
+              members.
+            </p>
+            <p>
+              We understand the unique challenges of living in the High Desert
+              — from the wind-blown debris to the heat that can make yard
+              cleanup unpleasant. That&apos;s why we do the dirty work for
+              you, thoroughly and consistently.
+            </p>
+            <p>
+              With over 85 happy customers and more than 150 five-star reviews,
+              we&apos;re proud to be the trusted choice for pet waste removal
+              in Hesperia, Victorville, Apple Valley, and the surrounding
+              communities.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="bg-sand-50 py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center font-heading text-3xl font-bold text-bark-900"
-          >
+      <section className="border-t border-sand-100 bg-sand-50 py-20">
+        <div className="mx-auto max-w-6xl px-5">
+          <h2 className="font-heading text-2xl font-bold text-bark-900">
             What Sets Us Apart
-          </motion.h2>
-          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map((value, i) => {
+          </h2>
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {values.map((value) => {
               const Icon = value.icon;
               return (
-                <motion.div
-                  key={value.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="rounded-2xl bg-white p-8 text-center shadow-sm"
-                >
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-purple-100">
-                    <Icon className="h-7 w-7 text-purple-500" />
-                  </div>
-                  <h3 className="mt-5 font-heading text-lg font-semibold text-bark-900">
+                <div key={value.title}>
+                  <Icon className="h-5 w-5 text-purple-500" />
+                  <h3 className="mt-3 font-heading text-base font-semibold text-bark-900">
                     {value.title}
                   </h3>
-                  <p className="mt-3 text-sm text-sand-600">
+                  <p className="mt-2 text-sm leading-relaxed text-sand-500">
                     {value.description}
                   </p>
-                </motion.div>
+                </div>
               );
             })}
           </div>

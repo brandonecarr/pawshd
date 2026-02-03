@@ -5,7 +5,6 @@ import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import { getPostBySlug, getAllPostSlugs } from "@/lib/wordpress";
 
 type Props = {
@@ -26,7 +25,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
     const post = await getPostBySlug(slug);
     if (!post) return { title: "Post Not Found" };
-
     return {
       title: post.title.rendered,
       description: post.excerpt.rendered.replace(/<[^>]*>/g, "").slice(0, 160),
@@ -45,9 +43,7 @@ export default async function BlogPostPage({ params }: Props) {
     post = null;
   }
 
-  if (!post) {
-    notFound();
-  }
+  if (!post) notFound();
 
   const featuredImage = post._embedded?.["wp:featuredmedia"]?.[0];
   const date = new Date(post.date).toLocaleDateString("en-US", {
@@ -61,31 +57,29 @@ export default async function BlogPostPage({ params }: Props) {
     <>
       <Header />
       <main>
-        <section className="bg-gradient-to-br from-purple-900 to-purple-700 pt-32 pb-20">
-          <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+        <section className="bg-purple-900 pt-28 pb-14">
+          <div className="mx-auto max-w-3xl px-5">
             <Link
               href="/blog"
-              className="mb-6 inline-flex items-center gap-1 text-sm text-purple-200 transition-colors hover:text-white"
+              className="inline-flex items-center gap-1 text-sm text-purple-300 hover:text-white"
             >
-              <ArrowLeft className="h-4 w-4" />
+              <ArrowLeft className="h-3.5 w-3.5" />
               Back to Blog
             </Link>
             <h1
-              className="font-heading text-4xl font-bold text-white"
+              className="mt-4 font-heading text-3xl font-bold text-white"
               dangerouslySetInnerHTML={{ __html: post.title.rendered }}
             />
-            <div className="mt-4 flex items-center justify-center gap-3 text-purple-200">
-              <span>{author}</span>
-              <span className="text-purple-400">&bull;</span>
-              <time>{date}</time>
-            </div>
+            <p className="mt-3 text-sm text-purple-300">
+              {author} &middot; {date}
+            </p>
           </div>
         </section>
 
-        <article className="bg-cream py-16">
-          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <article className="py-16">
+          <div className="mx-auto max-w-3xl px-5">
             {featuredImage && (
-              <div className="relative -mt-24 mb-12 aspect-video overflow-hidden rounded-2xl shadow-xl">
+              <div className="relative -mt-20 mb-10 aspect-video overflow-hidden rounded-lg">
                 <Image
                   src={featuredImage.source_url}
                   alt={featuredImage.alt_text || post.title.rendered}
@@ -96,14 +90,13 @@ export default async function BlogPostPage({ params }: Props) {
               </div>
             )}
             <div
-              className="prose prose-lg mx-auto max-w-none prose-headings:font-heading prose-headings:text-bark-900 prose-p:text-sand-700 prose-a:text-purple-500 prose-a:no-underline hover:prose-a:underline"
+              className="prose prose-lg max-w-none prose-headings:font-heading prose-headings:text-bark-900 prose-p:text-sand-600 prose-a:text-purple-500 prose-a:no-underline hover:prose-a:underline"
               dangerouslySetInnerHTML={{ __html: post.content.rendered }}
             />
           </div>
         </article>
       </main>
       <Footer />
-      <WhatsAppButton />
     </>
   );
 }

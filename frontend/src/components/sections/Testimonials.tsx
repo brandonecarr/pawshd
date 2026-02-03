@@ -1,7 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { Star } from "lucide-react";
 
 const testimonials = [
   {
@@ -26,49 +23,37 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-cream py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <h2 className="font-heading text-4xl font-bold text-bark-900">
-            What Our Customers Say
-          </h2>
-          <p className="mt-3 text-lg text-sand-600">
-            Don&apos;t just take our word for it — hear from our happy clients.
-          </p>
-        </motion.div>
+    <section className="py-20">
+      <div className="mx-auto max-w-6xl px-5">
+        <h2 className="font-heading text-3xl font-bold text-bark-900">
+          What Our Customers Say
+        </h2>
+        <p className="mt-2 text-sand-500">
+          Over 150 five-star reviews from happy pet owners.
+        </p>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
-          {testimonials.map((testimonial, i) => (
-            <motion.div
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {testimonials.map((t, i) => (
+            <div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="relative rounded-2xl bg-white p-8 shadow-sm"
+              className="rounded-lg border border-sand-200 bg-white p-6"
             >
-              <Quote className="absolute top-6 right-6 h-8 w-8 text-purple-100" />
               <div className="flex gap-0.5">
-                {Array.from({ length: testimonial.rating }).map((_, j) => (
+                {Array.from({ length: t.rating }).map((_, j) => (
                   <Star
                     key={j}
-                    className="h-5 w-5 fill-yellow-400 text-yellow-400"
+                    className="h-4 w-4 fill-amber-400 text-amber-400"
                   />
                 ))}
               </div>
-              <p className="mt-4 text-sand-700">{testimonial.text}</p>
-              <div className="mt-6 border-t border-sand-100 pt-4">
-                <p className="font-semibold text-bark-900">
-                  {testimonial.name}
-                </p>
-                <p className="text-sm text-sand-500">{testimonial.location}</p>
+              <p className="mt-4 text-sm leading-relaxed text-sand-600">
+                &ldquo;{t.text}&rdquo;
+              </p>
+              <div className="mt-5">
+                <p className="text-sm font-semibold text-bark-900">{t.name}</p>
+                <p className="text-xs text-sand-400">{t.location}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

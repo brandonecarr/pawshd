@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import BlogCard from "@/components/ui/BlogCard";
 import type { WPPost } from "@/lib/types";
 
@@ -31,55 +30,39 @@ export default function BlogContent() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-purple-900 to-purple-700 pt-32 pb-20">
-        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="font-heading text-5xl font-bold text-white"
-          >
+      <section className="bg-purple-900 pt-28 pb-14">
+        <div className="mx-auto max-w-6xl px-5">
+          <p className="text-sm font-medium uppercase tracking-widest text-purple-300">
+            News & tips
+          </p>
+          <h1 className="mt-3 font-heading text-4xl font-bold text-white">
             Blog
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="mt-4 text-lg text-purple-200"
-          >
-            Tips, news, and stories from the P.A.W.S. HD team.
-          </motion.p>
+          </h1>
         </div>
       </section>
 
-      {/* Blog Grid */}
-      <section className="bg-sand-50 py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="py-20">
+        <div className="mx-auto max-w-6xl px-5">
           {loading && (
-            <div className="flex justify-center py-20">
-              <div className="h-8 w-8 animate-spin rounded-full border-4 border-purple-200 border-t-purple-500" />
+            <div className="flex justify-center py-16">
+              <div className="h-6 w-6 animate-spin rounded-full border-2 border-sand-200 border-t-purple-500" />
             </div>
           )}
 
           {error && (
-            <div className="rounded-2xl bg-white p-12 text-center shadow-sm">
-              <p className="text-lg text-sand-600">
-                Blog posts will appear here once WordPress is connected. Start
-                adding posts in your WordPress admin!
-              </p>
-            </div>
+            <p className="text-center text-sand-500">
+              Blog posts will appear here once WordPress is connected.
+            </p>
           )}
 
           {!loading && !error && posts.length === 0 && (
-            <div className="rounded-2xl bg-white p-12 text-center shadow-sm">
-              <p className="text-lg text-sand-600">
-                No blog posts yet. Check back soon!
-              </p>
-            </div>
+            <p className="text-center text-sand-500">
+              No blog posts yet. Check back soon.
+            </p>
           )}
 
           {!loading && posts.length > 0 && (
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {posts.map((post) => (
                 <BlogCard key={post.id} post={post} />
               ))}

@@ -1,9 +1,6 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { Trash2, Wind, SprayCan } from "lucide-react";
+import { Trash2, Wind, SprayCan, ArrowRight } from "lucide-react";
 import { SERVICES } from "@/lib/constants";
-import Button from "@/components/ui/Button";
+import Link from "next/link";
 
 const iconMap = {
   "trash-2": Trash2,
@@ -13,49 +10,43 @@ const iconMap = {
 
 export default function ServicesOverview() {
   return (
-    <section className="bg-sand-50 py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <h2 className="font-heading text-4xl font-bold text-bark-900">
-            Our Services
-          </h2>
-          <p className="mt-3 text-lg text-sand-600">
-            Comprehensive yard cleanup so you and your pets can enjoy the
-            outdoors.
-          </p>
-        </motion.div>
+    <section className="border-t border-sand-100 bg-sand-50 py-20">
+      <div className="mx-auto max-w-6xl px-5">
+        <h2 className="font-heading text-3xl font-bold text-bark-900">
+          Our Services
+        </h2>
+        <p className="mt-2 text-sand-500">
+          Everything you need for a clean, fresh yard.
+        </p>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
-          {SERVICES.map((service, i) => {
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {SERVICES.map((service) => {
             const Icon = iconMap[service.icon];
             return (
-              <motion.div
+              <div
                 key={service.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="group rounded-2xl bg-white p-8 shadow-sm transition-shadow hover:shadow-md"
+                className="group rounded-lg border border-sand-200 bg-white p-6 transition-colors hover:border-purple-200"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-purple-100 transition-colors group-hover:bg-purple-500">
-                  <Icon className="h-7 w-7 text-purple-500 transition-colors group-hover:text-white" />
-                </div>
-                <h3 className="mt-6 font-heading text-xl font-semibold text-bark-900">
+                <Icon className="h-6 w-6 text-purple-500" />
+                <h3 className="mt-4 font-heading text-lg font-semibold text-bark-900">
                   {service.title}
                 </h3>
-                <p className="mt-3 text-sand-600">{service.description}</p>
-              </motion.div>
+                <p className="mt-2 text-sm leading-relaxed text-sand-500">
+                  {service.description}
+                </p>
+              </div>
             );
           })}
         </div>
 
-        <div className="mt-12 text-center">
-          <Button href="/services">View All Services</Button>
+        <div className="mt-10">
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-purple-500 hover:text-purple-600"
+          >
+            View all services
+            <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>

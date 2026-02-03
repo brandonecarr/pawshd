@@ -23,7 +23,7 @@
   --color-purple-800: #231456;
   --color-purple-900: #1F1346;
 
-  --color-cream: #f8f8fa;
+  --color-cream: #ffffff;
   --color-bark-900: #1d1e20;
 
   --color-accent-green: #00b090;
@@ -45,4 +45,8 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading), system-ui, sans-serif;
+}
+
+.prose img {
+  border-radius: 0.5rem;
 }

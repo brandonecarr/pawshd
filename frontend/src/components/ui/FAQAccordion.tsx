@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -14,42 +13,30 @@ export default function FAQAccordion({ items }: { items: readonly FAQItem[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="space-y-3">
+    <div className="divide-y divide-sand-200 border-t border-b border-sand-200">
       {items.map((item, i) => {
         const isOpen = openIndex === i;
         return (
-          <div
-            key={i}
-            className="overflow-hidden rounded-xl bg-white shadow-sm"
-          >
+          <div key={i}>
             <button
               onClick={() => setOpenIndex(isOpen ? null : i)}
-              className="flex w-full items-center justify-between px-6 py-5 text-left"
+              className="flex w-full items-center justify-between py-5 text-left"
             >
-              <span className="pr-4 font-semibold text-bark-900">
+              <span className="pr-4 text-sm font-semibold text-bark-900">
                 {item.question}
               </span>
               <ChevronDown
                 className={cn(
-                  "h-5 w-5 shrink-0 text-purple-500 transition-transform duration-200",
+                  "h-4 w-4 shrink-0 text-sand-400 transition-transform duration-200",
                   isOpen && "rotate-180"
                 )}
               />
             </button>
-            <AnimatePresence>
-              {isOpen && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="border-t border-sand-100 px-6 py-5 text-sand-600">
-                    {item.answer}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            {isOpen && (
+              <div className="pb-5 text-sm leading-relaxed text-sand-500">
+                {item.answer}
+              </div>
+            )}
           </div>
         );
       })}

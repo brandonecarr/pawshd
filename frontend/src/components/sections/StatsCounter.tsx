@@ -1,42 +1,39 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
 import { Star } from "lucide-react";
 import { STATS } from "@/lib/constants";
 
-function AnimatedCounter({
-  value,
-  suffix,
-  isRating,
-}: {
-  value: number;
-  suffix: string;
-  isRating?: boolean;
-}) {
+function Counter({ value, suffix, isRating }: { value: number; suffix: string; isRating?: boolean }) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true });
+  const started = useRef(false);
 
   useEffect(() => {
-    if (!isInView) return;
-
-    const duration = 2000;
-    const steps = 60;
-    const increment = value / steps;
-    let current = 0;
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= value) {
-        setCount(value);
-        clearInterval(timer);
-      } else {
-        setCount(isRating ? Math.round(current * 10) / 10 : Math.floor(current));
-      }
-    }, duration / steps);
-
-    return () => clearInterval(timer);
-  }, [isInView, value, isRating]);
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started.current) {
+          started.current = true;
+          let current = 0;
+          const step = value / 40;
+          const timer = setInterval(() => {
+            current += step;
+            if (current >= value) {
+              setCount(value);
+              clearInterval(timer);
+            } else {
+              setCount(isRating ? Math.round(current * 10) / 10 : Math.floor(current));
+            }
+          }, 30);
+        }
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [value, isRating]);
 
   return (
     <span ref={ref}>
@@ -48,34 +45,23 @@ function AnimatedCounter({
 
 export default function StatsCounter() {
   return (
-    <section className="bg-purple-500 py-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-          {STATS.map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="text-center"
-            >
-              <div className="font-heading text-4xl font-bold text-white sm:text-5xl">
+    <section className="border-b border-sand-100 bg-white py-12">
+      <div className="mx-auto max-w-6xl px-5">
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+          {STATS.map((stat) => (
+            <div key={stat.label} className="text-center">
+              <div className="font-heading text-3xl font-bold text-purple-900 sm:text-4xl">
                 {"isRating" in stat && stat.isRating ? (
-                  <div className="flex items-center justify-center gap-1">
-                    <AnimatedCounter
-                      value={stat.value}
-                      suffix={stat.suffix}
-                      isRating
-                    />
-                    <Star className="h-6 w-6 fill-yellow-400 text-yellow-400" />
-                  </div>
+                  <span className="inline-flex items-center gap-1">
+                    <Counter value={stat.value} suffix={stat.suffix} isRating />
+                    <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
+                  </span>
                 ) : (
-                  <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                  <Counter value={stat.value} suffix={stat.suffix} />
                 )}
               </div>
-              <p className="mt-2 text-sm text-purple-100">{stat.label}</p>
-            </motion.div>
+              <p className="mt-1 text-sm text-sand-500">{stat.label}</p>
+            </div>
           ))}
         </div>
       </div>

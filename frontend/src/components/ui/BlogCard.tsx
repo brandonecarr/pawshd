@@ -25,24 +25,28 @@ export default function BlogCard({ post }: { post: WPPost }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow hover:shadow-md"
+      className="group rounded-lg border border-sand-200 bg-white transition-colors hover:border-purple-200"
     >
       {image && (
-        <div className="relative aspect-video overflow-hidden">
+        <div className="relative aspect-video overflow-hidden rounded-t-lg">
           <Image
             src={image.src}
             alt={image.alt}
             fill
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            className="object-cover"
           />
         </div>
       )}
-      <div className="p-6">
-        <time className="text-sm text-sand-500">{date}</time>
-        <h3 className="mt-2 font-heading text-lg font-semibold text-bark-900 transition-colors group-hover:text-purple-500">
+      <div className="p-5">
+        <time className="text-xs text-sand-400">{date}</time>
+        <h3 className="mt-1.5 text-sm font-semibold text-bark-900 group-hover:text-purple-500">
           {post.title.rendered}
         </h3>
-        {excerpt && <p className="mt-2 text-sm text-sand-600">{excerpt}...</p>}
+        {excerpt && (
+          <p className="mt-2 text-xs leading-relaxed text-sand-500">
+            {excerpt}...
+          </p>
+        )}
       </div>
     </Link>
   );

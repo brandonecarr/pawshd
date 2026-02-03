@@ -2,28 +2,22 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { NAV_LINKS, SITE_CONFIG } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import Button from "@/components/ui/Button";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    if (isMobileOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = isMobileOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
@@ -34,32 +28,30 @@ export default function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-white/95 shadow-md backdrop-blur-md"
-          : "bg-transparent"
+          ? "bg-white shadow-sm"
+          : "bg-purple-900/90 backdrop-blur-sm"
       )}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <span
-            className={cn(
-              "font-heading text-2xl font-bold transition-colors",
-              isScrolled ? "text-purple-500" : "text-white"
-            )}
-          >
-            P.A.W.S. HD
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+        <Link href="/" className="font-heading text-xl font-bold tracking-tight">
+          <span className={isScrolled ? "text-purple-900" : "text-white"}>
+            P.A.W.S.
+          </span>{" "}
+          <span className={isScrolled ? "text-purple-500" : "text-purple-300"}>
+            HD
           </span>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-7 md:flex">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.id}
               href={link.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-purple-500",
-                isScrolled ? "text-bark-900" : "text-white"
+                "text-sm font-medium transition-colors",
+                isScrolled
+                  ? "text-sand-600 hover:text-purple-500"
+                  : "text-purple-100 hover:text-white"
               )}
             >
               {link.label}
@@ -67,76 +59,65 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Desktop CTA */}
-        <div className="hidden items-center gap-4 md:flex">
+        <div className="hidden items-center gap-5 md:flex">
           <a
             href={`tel:${SITE_CONFIG.phone}`}
             className={cn(
-              "flex items-center gap-1.5 text-sm font-medium transition-colors",
-              isScrolled ? "text-bark-900" : "text-white"
+              "flex items-center gap-1.5 text-sm font-medium",
+              isScrolled ? "text-sand-700" : "text-purple-200"
             )}
           >
-            <Phone className="h-4 w-4" />
+            <Phone className="h-3.5 w-3.5" />
             {SITE_CONFIG.phone}
           </a>
-          <Button href={SITE_CONFIG.quoteUrl} size="sm">
+          <Link
+            href={SITE_CONFIG.quoteUrl}
+            className="rounded-full bg-purple-500 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-purple-600"
+          >
             Free Quote
-          </Button>
+          </Link>
         </div>
 
-        {/* Mobile Hamburger */}
         <button
           onClick={() => setIsMobileOpen(!isMobileOpen)}
-          className={cn(
-            "rounded-lg p-2 md:hidden",
-            isScrolled ? "text-bark-900" : "text-white"
-          )}
+          className={cn("p-2 md:hidden", isScrolled ? "text-sand-900" : "text-white")}
           aria-label="Toggle menu"
         >
-          {isMobileOpen ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <Menu className="h-6 w-6" />
-          )}
+          {isMobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="overflow-hidden border-t border-sand-200 bg-white md:hidden"
-          >
-            <nav className="flex flex-col gap-1 px-4 py-4">
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.id}
-                  href={link.href}
-                  onClick={() => setIsMobileOpen(false)}
-                  className="rounded-lg px-4 py-3 text-base font-medium text-bark-900 transition-colors hover:bg-sand-100"
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <div className="mt-4 flex flex-col gap-3 border-t border-sand-200 pt-4">
-                <a
-                  href={`tel:${SITE_CONFIG.phone}`}
-                  className="flex items-center gap-2 px-4 py-2 text-bark-900"
-                >
-                  <Phone className="h-4 w-4" />
-                  {SITE_CONFIG.phone}
-                </a>
-                <Button href={SITE_CONFIG.quoteUrl} className="w-full">
-                  Free Quote
-                </Button>
-              </div>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {isMobileOpen && (
+        <div className="border-t border-sand-100 bg-white px-5 pb-6 pt-4 md:hidden">
+          <nav className="flex flex-col gap-1">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.id}
+                href={link.href}
+                onClick={() => setIsMobileOpen(false)}
+                className="rounded-lg px-3 py-2.5 text-sm font-medium text-sand-700 hover:bg-sand-50"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+          <div className="mt-4 flex flex-col gap-3 border-t border-sand-100 pt-4">
+            <a
+              href={`tel:${SITE_CONFIG.phone}`}
+              className="flex items-center gap-2 px-3 text-sm text-sand-600"
+            >
+              <Phone className="h-3.5 w-3.5" />
+              {SITE_CONFIG.phone}
+            </a>
+            <Link
+              href={SITE_CONFIG.quoteUrl}
+              className="rounded-full bg-purple-500 px-5 py-2.5 text-center text-sm font-semibold text-white"
+            >
+              Free Quote
+            </Link>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
