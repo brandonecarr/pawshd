@@ -5,9 +5,9 @@ import { ChevronRight } from "lucide-react";
 export default function CTASection() {
   return (
     <section className="relative bg-purple-900 py-24 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(103,61,230,0.15)_0%,transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,227,107,0.08)_0%,transparent_70%)]" />
       <div className="relative mx-auto max-w-6xl px-6 text-center">
-        <p className="text-xs font-bold uppercase tracking-wider text-purple-300">
+        <p className="text-xs font-bold uppercase tracking-wider text-accent">
           Ready to start?
         </p>
         <h2 className="mt-4 text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
@@ -19,14 +19,14 @@ export default function CTASection() {
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href={SITE_CONFIG.quoteUrl}
-            className="inline-flex items-center gap-3 bg-white text-purple-900 px-10 py-4 rounded-full font-bold text-lg hover:bg-sand-50 transition-all hover:-translate-y-1 shadow-lg"
+            className="inline-flex items-center gap-3 bg-accent text-purple-900 px-10 py-4 rounded-full font-bold text-lg hover:bg-white transition-all hover:-translate-y-1 shadow-[0_0_25px_rgba(0,227,107,0.3)]"
           >
             Get Your Free Quote
             <ChevronRight className="w-5 h-5" />
           </Link>
           <a
             href={`tel:${SITE_CONFIG.phone}`}
-            className="inline-flex items-center gap-2 border-2 border-purple-300 text-purple-300 px-8 py-4 rounded-full font-bold text-lg hover:bg-purple-300 hover:text-purple-900 transition-all"
+            className="inline-flex items-center gap-2 border-2 border-accent text-accent px-8 py-4 rounded-full font-bold text-lg hover:bg-accent hover:text-purple-900 transition-all"
           >
             Call {SITE_CONFIG.phone}
           </a>

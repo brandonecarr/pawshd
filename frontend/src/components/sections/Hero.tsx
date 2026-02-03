@@ -23,7 +23,7 @@ export default function Hero() {
           <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-16 text-center md:text-left">
             <div className="max-w-2xl space-y-6">
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 text-white text-xs font-bold uppercase tracking-wider w-fit mx-auto md:mx-0">
-                <ShieldCheck className="h-3.5 w-3.5 text-purple-300" />
+                <ShieldCheck className="h-3.5 w-3.5 text-accent" />
                 Trusted Local Pet Care
               </div>
 
@@ -44,7 +44,7 @@ export default function Hero() {
                 </Button>
                 <Button
                   href={`tel:${SITE_CONFIG.phone}`}
-                  variant="white"
+                  variant="accentOutline"
                   size="lg"
                 >
                   Call {SITE_CONFIG.phone}

@@ -40,7 +40,7 @@ export default function ContactContent() {
     <>
       <section className="bg-purple-900 pt-28 pb-14">
         <div className="mx-auto max-w-6xl px-6">
-          <p className="text-xs font-bold uppercase tracking-wider text-purple-300">
+          <p className="text-xs font-bold uppercase tracking-wider text-accent">
             Get in touch
           </p>
           <h1 className="mt-3 text-4xl md:text-5xl font-extrabold text-white tracking-tight">
@@ -64,7 +64,7 @@ export default function ContactContent() {
                   className="flex items-center gap-4 rounded-2xl bg-white border border-sand-100 p-4 hover:shadow-md transition-shadow"
                 >
                   <div className="w-10 h-10 rounded-xl bg-purple-900 flex items-center justify-center">
-                    <Phone className="h-4 w-4 text-purple-300" />
+                    <Phone className="h-4 w-4 text-accent" />
                   </div>
                   <span className="text-sm font-medium text-purple-900">
                     {SITE_CONFIG.phone}
@@ -75,7 +75,7 @@ export default function ContactContent() {
                   className="flex items-center gap-4 rounded-2xl bg-white border border-sand-100 p-4 hover:shadow-md transition-shadow"
                 >
                   <div className="w-10 h-10 rounded-xl bg-purple-900 flex items-center justify-center">
-                    <Mail className="h-4 w-4 text-purple-300" />
+                    <Mail className="h-4 w-4 text-accent" />
                   </div>
                   <span className="text-sm font-medium text-purple-900">
                     {SITE_CONFIG.email}
@@ -87,8 +87,8 @@ export default function ContactContent() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 rounded-2xl bg-white border border-sand-100 p-4 hover:shadow-md transition-shadow"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-green-500 flex items-center justify-center">
-                    <MessageCircle className="h-4 w-4 text-white" />
+                  <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center">
+                    <MessageCircle className="h-4 w-4 text-purple-900" />
                   </div>
                   <span className="text-sm font-medium text-purple-900">
                     WhatsApp
@@ -96,7 +96,7 @@ export default function ContactContent() {
                 </a>
                 <div className="flex items-center gap-4 rounded-2xl bg-white border border-sand-100 p-4">
                   <div className="w-10 h-10 rounded-xl bg-purple-900 flex items-center justify-center">
-                    <MapPin className="h-4 w-4 text-purple-300" />
+                    <MapPin className="h-4 w-4 text-accent" />
                   </div>
                   <span className="text-sm text-sand-600">
                     {SERVICE_AREAS.slice(0, 4).join(", ")} & more
@@ -106,7 +106,7 @@ export default function ContactContent() {
 
               <Link
                 href={SITE_CONFIG.quoteUrl}
-                className="inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-purple-600 hover:shadow-lg transition-all shadow-[0_0_15px_rgba(103,61,230,0.3)]"
+                className="inline-flex items-center gap-2 bg-accent text-purple-900 px-6 py-3 rounded-full font-bold text-sm hover:bg-white hover:shadow-lg transition-all shadow-[0_0_15px_rgba(0,227,107,0.3)]"
               >
                 Quote via SweepAndGo
               </Link>
@@ -233,7 +233,7 @@ export default function ContactContent() {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full rounded-full bg-accent text-white px-6 py-4 font-bold text-lg transition-all hover:bg-purple-600 hover:shadow-lg shadow-[0_0_20px_rgba(103,61,230,0.3)] disabled:opacity-50"
+                    className="w-full rounded-full bg-accent text-purple-900 px-6 py-4 font-bold text-lg transition-all hover:bg-white hover:shadow-lg shadow-[0_0_20px_rgba(0,227,107,0.3)] disabled:opacity-50"
                   >
                     {submitting ? "Sending..." : "Send Message"}
                   </button>

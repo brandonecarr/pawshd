@@ -24,7 +24,7 @@ export default function ServiceArea() {
               className="flex flex-col items-center gap-3 rounded-3xl bg-white p-6 shadow-sm border border-sand-100 text-center hover:-translate-y-2 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-12 h-12 rounded-2xl bg-purple-900 flex items-center justify-center">
-                <MapPin className="h-5 w-5 text-purple-300" />
+                <MapPin className="h-5 w-5 text-accent" />
               </div>
               <span className="text-sm font-bold text-purple-900">{area}</span>
             </div>

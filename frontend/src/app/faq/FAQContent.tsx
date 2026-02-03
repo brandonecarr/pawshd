@@ -8,7 +8,7 @@ export default function FAQContent() {
     <>
       <section className="bg-purple-900 pt-28 pb-14">
         <div className="mx-auto max-w-6xl px-6">
-          <p className="text-xs font-bold uppercase tracking-wider text-purple-300">
+          <p className="text-xs font-bold uppercase tracking-wider text-accent">
             Common questions
           </p>
           <h1 className="mt-3 text-4xl md:text-5xl font-extrabold text-white tracking-tight">
@@ -31,7 +31,7 @@ export default function FAQContent() {
             <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-purple-600 transition-all shadow-[0_0_15px_rgba(103,61,230,0.3)]"
+                className="inline-flex items-center gap-2 bg-accent text-purple-900 px-6 py-3 rounded-full font-bold text-sm hover:bg-white transition-all shadow-[0_0_15px_rgba(0,227,107,0.3)]"
               >
                 Contact Us
               </Link>

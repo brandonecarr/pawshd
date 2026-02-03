@@ -61,7 +61,7 @@ export default function BeforeAfterGallery() {
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute top-4 left-4 bg-accent/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full">
+                  <div className="absolute top-4 left-4 bg-accent/90 backdrop-blur-sm text-purple-900 text-xs font-bold px-3 py-1.5 rounded-full">
                     After
                   </div>
                 </div>
