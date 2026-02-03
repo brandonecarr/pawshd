@@ -7,7 +7,7 @@ import { SITE_CONFIG, IMAGES } from "@/lib/constants";
 
 export default function Hero() {
   return (
-    <section className="relative bg-purple-900 pt-24 pb-8 px-4 overflow-hidden">
+    <section className="relative pt-24 pb-8 px-4 overflow-hidden">
       <div className="mx-auto max-w-6xl">
         <div className="relative rounded-[2.5rem] overflow-hidden h-[600px] md:h-[700px] group w-full shadow-2xl shadow-black/5">
           <Image

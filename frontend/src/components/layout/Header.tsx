@@ -29,7 +29,7 @@ export default function Header() {
         "fixed top-0 left-0 right-0 z-40 transition-all duration-300",
         isScrolled
           ? "bg-bg/80 backdrop-blur-md border-b border-sand-200/50"
-          : "bg-transparent"
+          : "bg-bg/60 backdrop-blur-sm"
       )}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 h-20">
@@ -37,7 +37,7 @@ export default function Header() {
           <span
             className={cn(
               "font-heading text-lg font-bold tracking-tight transition-colors",
-              isScrolled ? "text-purple-900" : "text-white"
+              "text-purple-900"
             )}
           >
             P.A.W.S. HD
@@ -51,9 +51,7 @@ export default function Header() {
               href={link.href}
               className={cn(
                 "text-sm font-medium transition-colors",
-                isScrolled
-                  ? "text-sand-600 hover:text-purple-900"
-                  : "text-white/80 hover:text-white"
+                "text-sand-600 hover:text-purple-900"
               )}
             >
               {link.label}
@@ -72,7 +70,7 @@ export default function Header() {
           onClick={() => setIsMobileOpen(!isMobileOpen)}
           className={cn(
             "p-2 md:hidden transition-colors",
-            isScrolled ? "text-purple-900" : "text-white"
+            "text-purple-900"
           )}
           aria-label="Toggle menu"
         >
